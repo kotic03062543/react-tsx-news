@@ -1,7 +1,9 @@
+import AppRouter from "./routers/AppRouter";
+
 function App() {
   return (
     <>
-      <div className="bg-red-400">test kk</div>
+      <AppRouter />
     </>
   );
 }
