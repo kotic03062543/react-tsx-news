@@ -1,9 +1,9 @@
 import React from "react";
 
-function HomeViewModel() {
+function SportViewModel() {
   const [state, setState] = React.useState("");
   setState("Home ViewModel");
   return { setState, state };
 }
 
-export default HomeViewModel;
+export default SportViewModel;

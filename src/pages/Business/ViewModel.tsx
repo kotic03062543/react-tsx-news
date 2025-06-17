@@ -1,9 +1,9 @@
 import React from "react";
 
-function HomeViewModel() {
+function ViewModel() {
   const [state, setState] = React.useState("");
-  setState("Home ViewModel");
+  setState("Business ViewModel");
   return { setState, state };
 }
 
-export default HomeViewModel;
+export default ViewModel;
