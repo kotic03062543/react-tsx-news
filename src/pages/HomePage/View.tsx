@@ -1,12 +1,13 @@
 import ArticleCard from "../../components/Card/ArticleCard";
 import MainCard from "../../components/Card/MainCard";
 import NormalCard from "../../components/Card/NormalCard";
+import NewsCard from "../../components/Card/NewsCard";
 import type { NewsArticle } from "../../services/HomePage/Type";
 
 function HomeView() {
   const sampleArticle: NewsArticle = {
     source: { id: "techcrunch", name: "TechCrunch" },
-    author: "Lauren Forristal",
+    author: "Lauren",
     title:
       "Bye-bye bots: Altera's game-playing AI agents get backing from Eric Schmidt | TechCrunch",
     description:
@@ -22,23 +23,25 @@ function HomeView() {
     <div className="flex flex-col lg:flex-row gap-5 px-4 py-6 my-1 mx-20">
       {/* ซ้าย */}
       <div className="flex flex-col gap-4 basis-2/5">
-        <ArticleCard article={sampleArticle} />
-        <ArticleCard article={sampleArticle} />
+        {/* <ArticleCard article={sampleArticle} /> */}
+        {/* <ArticleCard article={sampleArticle} /> */}
+        <NewsCard article={sampleArticle} />
+        <NewsCard article={sampleArticle} />
       </div>
 
       {/* กลางใหญ่ */}
       <div className="flex-grow">
-        <MainCard main={sampleArticle} />
+        {/* <MainCard main={sampleArticle} /> */}
+        <NewsCard article={sampleArticle} showMeta={false} />
       </div>
 
       {/* ขวา */}
       <div className="flex flex-col gap-4 basis-2/5">
-        <NormalCard normal={sampleArticle} />
-        <NormalCard normal={sampleArticle} />
-        <NormalCard normal={sampleArticle} />
-        <NormalCard normal={sampleArticle} />
-        <NormalCard normal={sampleArticle} />
-        <NormalCard normal={sampleArticle} />
+        <NewsCard article={sampleArticle} showImage={false} showMeta={true} />
+        <NewsCard article={sampleArticle} showImage={false} showMeta={true} />
+        <NewsCard article={sampleArticle} showImage={false} showMeta={true} />
+        <NewsCard article={sampleArticle} showImage={false} showMeta={true} />
+        <NewsCard article={sampleArticle} showImage={false} showMeta={true} />
       </div>
     </div>
   );
