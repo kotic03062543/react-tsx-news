@@ -1,6 +1,4 @@
-import ArticleCard from "../../components/Card/ArticleCard";
-import MainCard from "../../components/Card/MainCard";
-import NormalCard from "../../components/Card/NormalCard";
+
 import NewsCard from "../../components/Card/NewsCard";
 import type { NewsArticle } from "../../services/HomePage/Type";
 
