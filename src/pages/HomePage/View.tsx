@@ -1,6 +1,6 @@
-import ArticleCard from "../../components/ArticleCard";
-import MainCard from "../../components/MainCard";
-import NormalCard from "../../components/NormalCard";
+import ArticleCard from "../../components/Card/ArticleCard";
+import MainCard from "../../components/Card/MainCard";
+import NormalCard from "../../components/Card/NormalCard";
 import type { NewsArticle } from "../../services/HomePage/Type";
 
 function HomeView() {
@@ -19,7 +19,7 @@ function HomeView() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row gap-6 px-4 py-6">
+    <div className="flex flex-col lg:flex-row gap-5 px-4 py-6 my-1 mx-20">
       {/* ซ้าย */}
       <div className="flex flex-col gap-4 basis-2/5">
         <ArticleCard article={sampleArticle} />
