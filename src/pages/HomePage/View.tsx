@@ -1,9 +1,47 @@
+import ArticleCard from "../../components/ArticleCard";
+import MainCard from "../../components/MainCard";
+import NormalCard from "../../components/NormalCard";
+import type { NewsArticle } from "../../services/HomePage/Type";
+
 function HomeView() {
+  const sampleArticle: NewsArticle = {
+    source: { id: "techcrunch", name: "TechCrunch" },
+    author: "Lauren Forristal",
+    title:
+      "Bye-bye bots: Altera's game-playing AI agents get backing from Eric Schmidt | TechCrunch",
+    description:
+      "Autonomous, AI-based players are coming to a gaming experience near you...",
+    url: "https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_1280.jpg",
+    urlToImage:
+      "https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_1280.jpg",
+    publishedAt: "2024-05-08T15:14:57Z",
+    content: "...",
+  };
+
   return (
-    <div>
-        <h1>Home View</h1>
+    <div className="flex flex-col lg:flex-row gap-6 px-4 py-6">
+      {/* ซ้าย */}
+      <div className="flex flex-col gap-4 basis-2/5">
+        <ArticleCard article={sampleArticle} />
+        <ArticleCard article={sampleArticle} />
+      </div>
+
+      {/* กลางใหญ่ */}
+      <div className="flex-grow">
+        <MainCard main={sampleArticle} />
+      </div>
+
+      {/* ขวา */}
+      <div className="flex flex-col gap-4 basis-2/5">
+        <NormalCard normal={sampleArticle} />
+        <NormalCard normal={sampleArticle} />
+        <NormalCard normal={sampleArticle} />
+        <NormalCard normal={sampleArticle} />
+        <NormalCard normal={sampleArticle} />
+        <NormalCard normal={sampleArticle} />
+      </div>
     </div>
-  )
+  );
 }
 
-export default HomeView
+export default HomeView;

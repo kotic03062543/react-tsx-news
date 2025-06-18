@@ -3,7 +3,7 @@ import user from '../assets/user.png';
 
 function Header() {
   return (
-    <div className='flex justify-between items-center bg-blue-100 text-white p-4 border border-gray-400'>
+    <div className='flex justify-between items-center text-white p-4 border border-b-gray-200'>
         <div className="cursor-pointer">
             <img className='w-8' src={hamburger} alt="no file" />
         </div>
