@@ -12,7 +12,7 @@ function NewsCard({
   showMeta = true,
 }: NewsCardProps) {
   return (
-    <div className="flex flex-col sm:flex-col gap-2">
+    <div className="flex flex-col gap-2">
       {showImage && article.url && (
         <img
           src={article.url || article.url}

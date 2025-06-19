@@ -1,4 +1,3 @@
-
 import NewsCard from "../../components/Card/NewsCard";
 import type { NewsArticle } from "../../services/HomePage/Type";
 
@@ -18,9 +17,9 @@ function HomeView() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row gap-5 px-4 py-6 my-1 mx-20">
+    <div className="flex flex-col lg:flex-row gap-5 px-4 py-6 my-1 max-4 md:mx-20">
       {/* ซ้าย */}
-      <div className="flex flex-col gap-4 basis-2/5">
+      <div className="flex flex-col gap-4 basis-2/5 order-1">
         {/* <ArticleCard article={sampleArticle} /> */}
         {/* <ArticleCard article={sampleArticle} /> */}
         <NewsCard article={sampleArticle} />
@@ -28,13 +27,13 @@ function HomeView() {
       </div>
 
       {/* กลางใหญ่ */}
-      <div className="flex-grow">
+      <div className="flex-grow order-2">
         {/* <MainCard main={sampleArticle} /> */}
         <NewsCard article={sampleArticle} showMeta={false} />
       </div>
 
       {/* ขวา */}
-      <div className="flex flex-col gap-4 basis-2/5">
+      <div className="flex flex-col gap-4 basis-2/5 order-3">
         <NewsCard article={sampleArticle} showImage={false} showMeta={true} />
         <NewsCard article={sampleArticle} showImage={false} showMeta={true} />
         <NewsCard article={sampleArticle} showImage={false} showMeta={true} />
