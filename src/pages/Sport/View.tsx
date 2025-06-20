@@ -66,8 +66,8 @@ function SportView() {
           {/* หัวกราฟ */}
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-2">
-              <div className="text-lg font-bold">Waste generated</div>
-              <div className="text-sm text-gray-400">in thousand tons</div>
+              <div className="text-[25px] font-bold">Waste generated</div>
+              <div className="text-[15px] text-gray-400">in thousand tons</div>
             </div>
             <div>
               <button className="text-blue-600 hover:underline">
@@ -76,7 +76,7 @@ function SportView() {
             </div>
           </div>
 
-          <div className="">
+          <div className="graph-1">
             {/* Victory Chart */}
             <VictoryChart
               domainPadding={40}
@@ -107,7 +107,7 @@ function SportView() {
               {/* แกน X */}
               <VictoryAxis
                 style={{
-                  tickLabels: { fontSize: 10, padding: 5 },
+                  tickLabels: { fontSize: 8, padding: 5 },
                   grid: { stroke: "transparent" },
                   axis: { stroke: "transparent" }, // ซ่อนเส้นแกน X
                   ticks: { stroke: "transparent" }, // ซ่อนเส้นทิศทาง
@@ -120,7 +120,7 @@ function SportView() {
                 tickValues={[0, 2000, 4000, 6000, 8000]}
                 tickFormat={(t) => `${t / 1000}K`}
                 style={{
-                  tickLabels: { fontSize: 10, padding: 5 },
+                  tickLabels: { fontSize: 8, padding: 5 },
                   grid: {
                     stroke: "#d1d5db",
                     strokeDasharray: "none",
@@ -151,7 +151,7 @@ function SportView() {
                     dy={-1} // ระยะห่างจากยอดแท่ง
                     dx={10} // ระยะห่างจากแกน X
                     angle={-60} // เอียงข้อความ
-                    style={{ fontSize: 8, fill: "#333" }}
+                    style={{ fontSize: 7, fill: "#333" }}
                   />
                 }
                 style={{ data: { fill: "transparent" } }}
@@ -165,10 +165,10 @@ function SportView() {
           <div className="bg-white rounded-lg shadow p-2 h-[237px]">
             {/* Title + Subtitle */}
             <div className="flex items-center gap-2">
-              <div className="text-[20px] font-bold">
+              <div className="text-[15px] font-bold">
                 Total wasts dilivered from disposal
               </div>
-              <div className="text-[12px] text-gray-400">in thousand tons</div>
+              <div className="text-[10px] text-gray-400">in thousand tons</div>
             </div>
 
             {/* Legend แยกออกมา */}
@@ -183,7 +183,7 @@ function SportView() {
               </div>
             </div>
 
-            <div className="">
+            <div className="graph-2">
               {/* Chart */}
               <VictoryChart
                 domainPadding={20}
@@ -252,10 +252,10 @@ function SportView() {
           <div className="bg-white rounded-lg shadow p-2 h-[237px]">
             {/* Title + Subtitle */}
             <div className="flex items-center gap-2">
-              <div className="text-[20px] font-bold">
+              <div className="text-[15px] font-bold">
                 Total wasts dilivered from disposal
               </div>
-              <div className="text-[12px] text-gray-400">in thousand tons</div>
+              <div className="text-[10px] text-gray-400">in thousand tons</div>
             </div>
 
             {/* Legend แยกออกมา */}
