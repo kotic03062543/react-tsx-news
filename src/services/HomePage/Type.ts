@@ -1,8 +1,5 @@
 export interface NewsArticle {
-  source: {
-    id: string | null;
-    name: string;
-  };
+  source: NewsSource;
   author: string;
   title: string;
   description: string;
@@ -20,13 +17,24 @@ export interface NewsBaseCard {
   url?: string;
 }
 
+export interface NewsSource {
+  id: string | null;
+  name: string;
+}
+
+// export interface NewsArticle {
+//   source: NewsSource;
+//   author: string | null;
+//   title: string;
+//   description: string;
+//   url: string;
+//   urlToImage: string | null;
+//   publishedAt: string;
+//   content: string;
+// }
+
 export interface NewsResponse {
   status: string;
   totalResults: number;
   articles: NewsArticle[];
-}
-
-export interface NewsCategory {
-  id: string;
-  name: string;
 }
