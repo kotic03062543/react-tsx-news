@@ -13,9 +13,9 @@ function NewsCard({
 }: NewsCardProps) {
   return (
     <div className="flex flex-col gap-2">
-      {showImage && article.url && (
+      {showImage && article.urlToImage && (
         <img
-          src={article.url || article.url}
+          src={article.urlToImage || article.urlToImage}
           alt={article.title || "No Image"}
           className="w-full object-cover"
         />
