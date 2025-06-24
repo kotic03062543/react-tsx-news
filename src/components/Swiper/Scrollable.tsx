@@ -15,10 +15,10 @@ function Scrollable({ data }: NewScrollableProps) {
         navigation
         spaceBetween={data?.spaceBetween || 20}
         slidesPerView={data?.slidesPerView || 5}
-        // breakpoints={{
-        //   640: { slidesPerView: 2 },
-        //   1024: { slidesPerView: 3 },
-        // }}
+        breakpoints={{
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }}
         className=""
       >
         {data?.children?.map((child, index) => (
