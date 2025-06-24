@@ -1,4 +1,5 @@
 import NewsCard from "../../components/Card/NewsCard";
+import Scrollable from "../../components/Swiper/Scrollable";
 // import type { NewsArticle } from "../../services/HomePage/Type";
 import HomeViewModel from "./ViewModel";
 
@@ -24,7 +25,7 @@ function HomeView() {
   //   };
 
   return (
-    <div className="bg-gray-300 flex flex-col gap-15 px-5 md:px-20 py-5 md:py-10">
+    <div className="flex flex-col gap-15 px-5 md:px-20 py-5 md:py-10">
       <div className="flex flex-col lg:flex-row gap-5 justify-center">
         {/* <div className="text-red-500 md:text-blue-500 lg:text-yellow-500">TEST</div> */}
         {/* ซ้าย */}
@@ -59,7 +60,19 @@ function HomeView() {
           ))}
         </div>
       </div>
-      <div></div>
+      <div className="">
+        <Scrollable
+          data={{
+            spaceBetween: 20,
+            slidesPerView: 5,
+            children: articles
+              .slice(0, 9)
+              .map((article, index) => (
+                <NewsCard key={index} article={article} />
+              )),
+          }}
+        />
+      </div>
     </div>
   );
 }
