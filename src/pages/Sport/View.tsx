@@ -1,5 +1,4 @@
 import StackBarChart from "../../components/Chart/StackBarChart";
-import { sample } from "lodash";
 import type {
   GroupBarChartProps,
   StackBarChartProps,
@@ -40,7 +39,7 @@ function SportView() {
   //     { x: "2025", y: 4000 },
   //   ];
 
-  // ข้อมูลสำหรับกราฟแท่ง
+  // mock กราฟแท่ง
   const sampleForGroupBar: GroupBarChartProps[] = [
     {
       title: "Total waste delivered from disposal",
