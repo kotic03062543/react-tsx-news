@@ -63,7 +63,7 @@ function HomeView() {
       <div className="text-white px-4 py-6 bg-black">
         <Scrollable
           data={{
-            spaceBetween: 20,
+            spaceBetween: 30,
             slidesPerView: 6,
             children: articles
               .slice(0, 9)

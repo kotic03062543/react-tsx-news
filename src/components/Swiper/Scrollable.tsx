@@ -8,16 +8,21 @@ interface NewScrollableProps {
 
 function Scrollable({ data }: NewScrollableProps) {
   return (
-    <div>
+    <div className="w-full">
       <h2 className="text-xl font-bold mb-4">DISCOVER MORE FROM THE BBC</h2>
       <Swiper
         modules={[Navigation]}
         navigation
         spaceBetween={data?.spaceBetween || 20}
         slidesPerView={data?.slidesPerView || 5}
+        centeredSlides={false}
+        grabCursor={true}
         breakpoints={{
-          640: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
+          0: { slidesPerView: 2 },
+          640: { slidesPerView: 3 },
+          1024: { slidesPerView: 4 },
+          1280: { slidesPerView: 5 },
+          1536: { slidesPerView: 6 },
         }}
         className=""
       >
