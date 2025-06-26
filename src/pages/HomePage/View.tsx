@@ -1,4 +1,5 @@
 import NewsCard from "../../components/Card/NewsCard";
+import NewsCardSkeleton from "../../components/Skeleton/NewsCardSkeleton";
 import Scrollable from "../../components/Swiper/Scrollable";
 // import type { NewsArticle } from "../../services/HomePage/Type";
 import HomeViewModel from "./ViewModel";
@@ -6,23 +7,11 @@ import HomeViewModel from "./ViewModel";
 function HomeView() {
   const { getNews, isLoading } = HomeViewModel();
 
-  if (isLoading) {
-    return <div className="text-center">Loading...</div>;
-  }
   const articles = getNews?.articles ?? [];
-  //   const sampleArticle: NewsArticle = {
-  //     source: { id: "techcrunch", name: "TechCrunch" },
-  //     author: "Lauren",
-  //     title:
-  //       "Bye-bye bots: Altera's game-playing AI agents get backing from Eric Schmidt | TechCrunch",
-  //     description:
-  //       "Autonomous, AI-based players are coming to a gaming experience near you...",
-  //     url: "https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_1280.jpg",
-  //     urlToImage:
-  //       "https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_1280.jpg",
-  //     publishedAt: "2024-05-08T15:14:57Z",
-  //     content: "...",
-  //   };
+
+  if (isLoading) {
+    return <SkeletonLoading />;
+  }
 
   return (
     <div className="flex flex-col gap-15 px-5 md:px-20 py-5 md:py-10">
@@ -78,3 +67,54 @@ function HomeView() {
 }
 
 export default HomeView;
+
+function SkeletonLoading() {
+  return (
+    <div className="flex flex-col gap-6 px-5 md:px-20 py-5 md:py-10">
+      <div className="flex flex-col lg:flex-row gap-5">
+        {/* ซ้าย */}
+        <div className="w-full flex flex-col gap-4 basis-2/5">
+          {[...Array(2)].map(() => (
+            <NewsCardSkeleton />
+          ))}
+        </div>
+
+        {/* กลางใหญ่ */}
+        <div className="w-full h-[300px] flex-grow">
+          <NewsCardSkeleton />
+        </div>
+
+        {/* ขวา */}
+        <div className="w-full flex flex-col gap-4 basis-2/5">
+          {[...Array(2)].map(() => (
+            <NewsCardSkeleton />
+          ))}
+        </div>
+      </div>
+
+      {/* ONLY FROM THE BBC */}
+      <div className="flex flex-col gap-3">
+        <div className="border"></div>
+        <div className="font-bold text-lg">ONLY FROM THE BBC</div>
+        <div className="flex flex-row gap-5">
+          {[...Array(2)].map(() => (
+            <div className="basis-1/2">
+              <NewsCardSkeleton />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Scrollable */}
+      <div className="text-white px-4 py-6 bg-black">
+        <div className="flex gap-6 overflow-x-auto">
+          {[...Array(6)].map(() => (
+            <div className="min-w-[200px]">
+              <NewsCardSkeleton />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
