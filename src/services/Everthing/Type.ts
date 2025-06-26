@@ -27,3 +27,11 @@ export interface NewsBaseCard {
   author?: string;
   urlToImage?: string;
 }
+
+export interface GetNewsRequest {
+  country?: string;
+  category?: string;
+  q?: string;
+  pageSize?: number;
+  page?: number;
+}
