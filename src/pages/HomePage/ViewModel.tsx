@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { GetNews } from "../../services/HomePage";
+import { GetNews } from "../../services/Everthing";
 
 function HomeViewModel() {
   const { data: getNews, isLoading } = useQuery({

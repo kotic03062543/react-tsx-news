@@ -1,4 +1,4 @@
-import type { NewsBaseCard } from "../../services/HomePage/Type";
+import type { NewsBaseCard } from "../../services/Everthing/Type";
 
 interface NewsCardProps {
   article: NewsBaseCard;
