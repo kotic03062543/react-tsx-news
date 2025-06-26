@@ -26,14 +26,18 @@ function StackBarChart({ stack, isShowViewFullScreen }: NewStackBarChartProps) {
       {/* หัวกราฟ */}
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2">
-          <div className="text-[25px] font-bold">{stack.title}</div>
-          <div className="text-[15px] text-gray-400">
+          <div className="tex-sm lg:text-[25px] font-bold">{stack.title}</div>
+          <div className="hidden lg:flex lg:text-[15px] text-gray-400">
             {stack ? stack.subtitle : ""}
           </div>
         </div>
-        {isShowViewFullScreen ? (
-          <div className="text-blue-600 hover:underline">View full screen</div>
-        ) : null}
+        <div className="hidden lg:flex">
+          {isShowViewFullScreen ? (
+            <div className="text-blue-600 hover:underline">
+              View full screen
+            </div>
+          ) : null}
+        </div>
       </div>
 
       {/* Victory Chart */}

@@ -125,7 +125,7 @@ function SportView() {
   return (
     <div>
       {/* <div className="flex justify-center p-2">Sport View</div> */}
-      <div className="flex flex-row gap-4 p-4">
+      <div className="flex flex-col lg:flex-row gap-4 p-4">
         {/* ครึ่งซ้าย 1 stack */}
         <div className="w-full bg-white rounded-lg shadow p-2 h-full">
           {sampleForStackedBar.map((stack, index) => (
@@ -139,12 +139,12 @@ function SportView() {
 
         {/* ครึ่งขวา 2 group bar */}
         <div className="flex flex-col gap-4 w-full">
-          <div className="bg-white rounded-lg shadow p-2 h-full w-full">
+          <div className="bg-white rounded-lg shadow p-2 h-full w-full order-2 lg:order-1">
             {sampleForGroupBar.map((group, index) => (
               <GroupBarChart key={index} group={group} />
             ))}
           </div>
-          <div className="bg-white rounded-lg shadow p-2 h-full">
+          <div className="bg-white rounded-lg shadow p-2 h-full order-1 lg:order-2">
             {sampleForGroupBar2.map((group, index) => (
               <GroupBarChart key={index} group={group} />
             ))}
