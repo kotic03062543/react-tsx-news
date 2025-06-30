@@ -1,12 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import hamburger from "../assets/hamburger.png";
 import user from "../assets/user.png";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
   const navigate = useNavigate();
 
   const navItems = [
@@ -63,13 +61,16 @@ function Header() {
         </div>
       </div>
 
-      {/* Side Drawer (Mobile only) */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-50 flex">
-          <div className="w-72 h-full bg-white shadow-lg p-4 overflow-auto">
-            {/* Close button */}
+        <div
+          id="drawer-example"
+          className={`fixed top-0 left-0 z-50 h-screen overflow-y-auto transition-transform bg-white w-80
+          ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
+          aria-labelledby="drawer-label"
+        >
+          <div className="w-72 h-full bg-white p-4 overflow-auto">
+            {/* Close */}
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-bold">Categories</h2>
               <button onClick={handleCloseMenu} className="text-xl font-bold">
                 ✕
               </button>
@@ -89,7 +90,6 @@ function Header() {
             </ul>
           </div>
 
-          {/* ✅ Overlay อยู่ขวา */}
           <div
             className="flex-1 bg-black bg-opacity-50"
             onClick={handleCloseMenu}
