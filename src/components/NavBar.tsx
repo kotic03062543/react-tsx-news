@@ -1,16 +1,13 @@
 function NavBar() {
   const navItems = [
     { label: "Home", path: "/" },
-    { label: "Graph", path: "/graph" },
     { label: "Business", path: "/business" },
-    { label: "Innovation", path: "/innovation" },
-    { label: "Culture", path: "/culture" },
-    { label: "Arts", path: "/arts" },
-    { label: "Travel", path: "/travel" },
-    { label: "Earth", path: "/earth" },
-    { label: "Audio", path: "/audio" },
-    { label: "Video", path: "/video" },
-    { label: "Live", path: "/live" },
+    { label: "Entertainment", path: "/entertainment" },
+    { label: "General", path: "/general" },
+    { label: "Health", path: "/health" },
+    { label: "Science", path: "/science" },
+    { label: "Sports", path: "/sports" },
+    { label: "Technology", path: "/technology" },
   ];
 
   return (
