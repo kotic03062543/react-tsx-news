@@ -4,15 +4,17 @@ interface NewsCardProps {
   article: NewsBaseCard;
   showImage?: boolean;
   showMeta?: boolean;
+  onClick?: () => void;
 }
 
 function NewsCard({
   article,
   showImage = true,
   showMeta = true,
+  onClick,
 }: NewsCardProps) {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2" onClick={onClick}>
       <div>
         {showImage && article.urlToImage && (
           <img

@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Layout from "../components/Layout";
 import HomeView from "../pages/HomePage/View";
+import DetailView from "../pages/NewsDetail/View";
 
 function AppRouter() {
   return (
@@ -11,7 +12,7 @@ function AppRouter() {
       <Route path="/business" element={<Layout><BusinesView/></Layout>} /> */}
       {/* <Route path="/entertainment" element={<div>entertainment Page</div>} /> */}
       <Route path="/news/:id" element={<div>News Detail Page</div>} />
-      <Route path="/detail/:index/:category" element={<div>News Detail Page</div>} />
+      <Route path="/detail" element={<Layout><DetailView/></Layout>} />
       <Route path="*" element={<div>404 Not Found</div>} />
     </Routes>
   );

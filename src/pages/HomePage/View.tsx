@@ -1,13 +1,20 @@
 import NewsCard from "../../components/Card/NewsCard";
 import NewsCardSkeleton from "../../components/Skeleton/NewsCardSkeleton";
 import Scrollable from "../../components/Swiper/Scrollable";
+import type { NewsArticle } from "../../services/Everthing/Type";
 // import type { NewsArticle } from "../../services/HomePage/Type";
 import HomeViewModel from "./ViewModel";
+import { useNavigate } from "react-router-dom";
 
 function HomeView() {
   const { getNews, isLoading } = HomeViewModel();
 
   const articles = getNews?.articles ?? [];
+
+  const navigate = useNavigate();
+  const handleClick = (article: NewsArticle) => {
+    navigate("/detail", { state: { article } });
+  };
 
   if (isLoading) {
     return <SkeletonLoading />;
@@ -20,21 +27,35 @@ function HomeView() {
         {/* ซ้าย */}
         <div className="w-full flex flex-col gap-4 basis-2/5">
           {articles.slice(0, 2).map((article, index) => (
-            <NewsCard key={index} article={article} />
+            <NewsCard
+              key={index}
+              article={article}
+              onClick={() => handleClick(article)}
+            />
           ))}
         </div>
 
         {/* กลางใหญ่ */}
         <div className="w-full flex-grow ">
           {articles.slice(2, 3).map((article, index) => (
-            <NewsCard key={index} article={article} showMeta={false} />
+            <NewsCard
+              key={index}
+              article={article}
+              showMeta={false}
+              onClick={() => handleClick(article)}
+            />
           ))}
         </div>
 
         {/* ขวา */}
         <div className="w-full flex flex-col gap-4 basis-2/5">
           {articles.slice(3, 7).map((article, index) => (
-            <NewsCard key={index} article={article} showImage={false} />
+            <NewsCard
+              key={index}
+              article={article}
+              showImage={false}
+              onClick={() => handleClick(article)}
+            />
           ))}
         </div>
       </div>
@@ -44,7 +65,10 @@ function HomeView() {
         <div className="flex flex-row gap-5">
           {articles.slice(3, 5).map((article, index) => (
             <div key={index} className="basis-1/2">
-              <NewsCard article={article} />
+              <NewsCard
+                article={article}
+                onClick={() => handleClick(article)}
+              />
             </div>
           ))}
         </div>
@@ -57,7 +81,11 @@ function HomeView() {
             children: articles
               .slice(0, 9)
               .map((article, index) => (
-                <NewsCard key={index} article={article} />
+                <NewsCard
+                  key={index}
+                  article={article}
+                  onClick={() => handleClick(article)}
+                />
               )),
           }}
         />
