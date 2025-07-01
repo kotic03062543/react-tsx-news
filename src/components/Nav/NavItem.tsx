@@ -14,7 +14,7 @@ function NavItemCom({ items, className = "" }: NavMenuProps) {
             <a
               className={
                 window.location.pathname === item.path
-                  ? "text-blue-500"
+                  ? "border-l-6 border-black bg-gray-100 px-3 py-3 font-medium mr-0"
                   : "text-black"
               }
               href={item.path}

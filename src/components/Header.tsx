@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import hamburger from "../assets/hamburger.png";
 import user from "../assets/user.png";
+import NavItemCom from "./Nav/NavItem";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigate = useNavigate();
 
   const navItems = [
     { label: "Home", path: "/" },
@@ -19,11 +18,6 @@ function Header() {
   ];
 
   const handleCloseMenu = () => setIsMenuOpen(false);
-
-  const handleNavClick = (path: string) => {
-    navigate(path);
-    setIsMenuOpen(false);
-  };
 
   return (
     <>
@@ -78,22 +72,23 @@ function Header() {
 
             <ul className="divide-y">
               {navItems.map((item) => (
-                <li key={item.label}>
-                  <button
-                    className="w-full text-left px-2 py-3 hover:bg-gray-100 capitalize font-medium"
-                    onClick={() => handleNavClick(item.path)}
-                  >
-                    {item.label}
-                  </button>
-                </li>
+                // <li key={item.label}>
+                //   <button
+                //     className="w-full text-left px-2 py-3 hover:bg-gray-100 capitalize font-medium"
+                //     onClick={() => handleNavClick(item.path)}
+                //   >
+                //     {item.label}
+                //   </button>
+                // </li>
+                <NavItemCom
+                  key={item.label}
+                  items={[item]}
+                  className="w-full text-left px-2 py-3 hover:bg-gray-100 font-medium"
+                />
               ))}
             </ul>
           </div>
 
-          <div
-            className="flex-1 bg-black bg-opacity-50"
-            onClick={handleCloseMenu}
-          />
         </div>
       )}
     </>
