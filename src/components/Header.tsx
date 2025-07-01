@@ -2,9 +2,13 @@ import { useState } from "react";
 import hamburger from "../assets/hamburger.png";
 import user from "../assets/user.png";
 import NavItemCom from "./Nav/NavItem";
+import { CiSearch } from "react-icons/ci";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [useSearch, setSearch] = useState("");
+  const navigate = useNavigate();
 
   const navItems = [
     { label: "Home", path: "/" },
@@ -29,7 +33,7 @@ function Header() {
         </div>
 
         {/* Logo */}
-        <div className="flex gap-3 justify-center items-center">
+        <div className="absolute left-1/2 -translate-x-1/2 flex gap-3 justify-center items-center">
           <div className="text-4xl font-bold bg-black text-white py-1 px-2">
             B
           </div>
@@ -70,6 +74,27 @@ function Header() {
               </button>
             </div>
 
+            {/* search รอแยก com */}
+            <div className="flex flex-row w-full h-12">
+              <input
+                type="text"
+                className="border border-black w-full h-full text-black bg-white placeholder-gray-700 px-2 focus:outline-none"
+                placeholder="Search news"
+                value={useSearch}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+              <button
+                onClick={() => {
+                  console.log("Search:", useSearch);
+                  setIsMenuOpen(false);
+                  navigate(`/search/${useSearch}`);
+                }}
+                className="bg-black px-3.5"
+              >
+                <CiSearch size={25} color="white" />
+              </button>
+            </div>
+
             <ul className="divide-y">
               {navItems.map((item) => (
                 // <li key={item.label}>
@@ -88,7 +113,6 @@ function Header() {
               ))}
             </ul>
           </div>
-
         </div>
       )}
     </>
