@@ -3,6 +3,7 @@ import { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { useParams } from "react-router-dom";
 import { GetNews } from "../../services/Everthing";
+import NewsCardSkeleton from "../../components/Skeleton/NewsCardSkeleton";
 
 function SearchNewsView() {
   const { q } = useParams();
@@ -39,7 +40,11 @@ function SearchNewsView() {
           </button>
         </div>
 
-        {isLoading && <p>Loading...</p>}
+        {isLoading && (
+          <div className="mt-5">
+            <NewsCardSkeleton />
+          </div>
+        )}
         {!isLoading && data?.articles?.length === 0 && (
           <p className="text-red-500">No results found for "{useSearch}"</p>
         )}
