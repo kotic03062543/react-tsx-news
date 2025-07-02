@@ -7,14 +7,14 @@ import NewsCardSkeleton from "../../components/Skeleton/NewsCardSkeleton";
 
 function SearchNewsView() {
   const { q } = useParams();
-  console.log("Query Parameter:", q);
+  //   console.log("Query Parameter:", q);
   const [useSearch, setSearch] = useState(q);
 
   const { data, isLoading } = useQuery({
     queryKey: ["searchNews", useSearch],
     queryFn: async () => {
       const data = await GetNews({ q: useSearch });
-      console.log("Search Response Data:", data);
+      //   console.log("Search Response Data:", data);
       if (data) {
         return data;
       }

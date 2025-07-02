@@ -1,5 +1,4 @@
 import { useLocation } from "react-router-dom";
-import useDetailViewModel from "./ViewModel";
 import { format, formatDistanceToNow, parseISO } from "date-fns";
 import share from "../../assets/boy.png";
 import save from "../../assets/boy.png";
@@ -44,6 +43,8 @@ function DetailView() {
   const formatDate = article.publishedAt
     ? formatDateEverything(article.publishedAt)
     : "No Date";
+
+    // main format date
 
   return (
     <div>

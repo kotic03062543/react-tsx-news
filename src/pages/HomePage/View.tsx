@@ -2,6 +2,7 @@ import NewsCard from "../../components/Card/NewsCard";
 import NewsCardSkeleton from "../../components/Skeleton/NewsCardSkeleton";
 import Scrollable from "../../components/Swiper/Scrollable";
 import type { NewsArticle } from "../../services/Everthing/Type";
+import SportView from "../Graph/View";
 // import type { NewsArticle } from "../../services/HomePage/Type";
 import HomeViewModel from "./ViewModel";
 import { useNavigate } from "react-router-dom";
@@ -22,6 +23,9 @@ function HomeView() {
 
   return (
     <div className="flex flex-col gap-15 px-5 md:px-20 py-5 md:py-10">
+      <div>
+      {/* <SportView/> */}
+      </div>
       <div className="flex flex-col lg:flex-row gap-5 justify-center">
         {/* <div className="text-red-500 md:text-blue-500 lg:text-yellow-500">TEST</div> */}
         {/* ซ้าย */}
