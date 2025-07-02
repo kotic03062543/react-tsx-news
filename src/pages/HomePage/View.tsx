@@ -1,11 +1,11 @@
+import { useDispatch, useSelector } from "react-redux";
 import NewsCard from "../../components/Card/NewsCard";
 import NewsCardSkeleton from "../../components/Skeleton/NewsCardSkeleton";
 import Scrollable from "../../components/Swiper/Scrollable";
 import type { NewsArticle } from "../../services/Everthing/Type";
-import SportView from "../Graph/View";
-// import type { NewsArticle } from "../../services/HomePage/Type";
 import HomeViewModel from "./ViewModel";
 import { useNavigate } from "react-router-dom";
+import type { IStoreProps } from "../../store/Type";
 
 function HomeView() {
   const { getNews, isLoading } = HomeViewModel();
@@ -17,15 +17,36 @@ function HomeView() {
     navigate("/detail", { state: { article } });
   };
 
+  const { userName, userId, userEmail } = useSelector(
+    (state: IStoreProps) => state.user
+  );
+
+  console.log("rs", userName, userId, userEmail);
+
+  const dispatch = useDispatch();
+
   if (isLoading) {
     return <SkeletonLoading />;
   }
 
   return (
     <div className="flex flex-col gap-15 px-5 md:px-20 py-5 md:py-10">
-      <div>
-      {/* <SportView/> */}
-      </div>
+      <button
+        className="bg-blue-500 text-white px-4 py-2 rounded-md mb-5"
+        onClick={() => {
+          dispatch({
+            type: "SET_USER",
+            payload: {
+              userName: "John Doe",
+              userId: "12345",
+              userEmail: "test@kk.com",
+            },
+          });
+        }}
+      >
+        CLICK ME
+      </button>
+      <div>{/* <SportView/> */}</div>
       <div className="flex flex-col lg:flex-row gap-5 justify-center">
         {/* <div className="text-red-500 md:text-blue-500 lg:text-yellow-500">TEST</div> */}
         {/* ซ้าย */}
