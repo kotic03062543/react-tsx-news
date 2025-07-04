@@ -31,7 +31,7 @@ function HomeView() {
 
   return (
     <div className="flex flex-col gap-15 px-5 md:px-20 py-5 md:py-10">
-      <button
+      {/* <button
         className="bg-blue-500 text-white px-4 py-2 rounded-md mb-5"
         onClick={() => {
           dispatch({
@@ -45,7 +45,7 @@ function HomeView() {
         }}
       >
         CLICK ME
-      </button>
+      </button> */}
       <div>{/* <SportView/> */}</div>
       <div className="flex flex-col lg:flex-row gap-5 justify-center">
         {/* <div className="text-red-500 md:text-blue-500 lg:text-yellow-500">TEST</div> */}
